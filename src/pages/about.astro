@@ -1,4 +1,11 @@
 ---
+    import './components/Header.astro'
+    import Header from './components/Header.astro';
+
+    import './components/Footer.astro'
+    import Footer from './components/Footer.astro';
+
+	import './styles/global.css'
     import './styles/global.css'
     
     const pageTitle = "About Me";
@@ -31,9 +38,7 @@
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Main site</a>
-        <a href="/about/">About me</a>
-        <a href="/blog/">Blog</a>
+        <Header />
 
 	    <h1>{pageTitle}</h1>
 
@@ -75,5 +80,9 @@
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
+        <Footer />
+        <script>
+            import "./scripts/menu.js";
+        </script>
 	</body>
 </html>
