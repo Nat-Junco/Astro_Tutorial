@@ -7,6 +7,8 @@
 
 	import './styles/global.css'
     import './styles/global.css'
+
+    import BaseLayout from './layouts/BaseLayout.astro';
     
     const pageTitle = "About Me";
 
@@ -38,21 +40,8 @@
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <Header />
 
-	    <h1>{pageTitle}</h1>
-
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-        h1 {
-            color: purple;
-            font-size: 4rem;
-        }
-        .skill {
-            color: var(--skillColor);
-            font-weight: var(--fontWeight);
-            text-transform: var(--textCase);
-        }
-        </style>
+	    <BaseLayout pageTitle={pageTitle}>
 
         <h2>... ¡y mi nuevo sitio Astro!</h2>
 
@@ -80,9 +69,6 @@
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-        <Footer />
-        <script>
-            import "./scripts/menu.js";
-        </script>
+        </BaseLayout>
 	</body>
 </html>
